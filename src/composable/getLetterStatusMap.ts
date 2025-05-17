@@ -33,9 +33,7 @@ export const getLetterStatusMap = (guesses: string[], solution: string): LetterS
 
       // Yellow Background
       if (found) {
-        if (statusMap[char] !== 'correct') {
-          statusMap[char] = 'present';
-        }
+        statusMap[char] = 'present';
       } 
       // Red Background
       else {
