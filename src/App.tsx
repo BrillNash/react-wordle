@@ -111,7 +111,7 @@ function App() {
             }
           </div>
           {
-            !guesses.includes(null) && solution.toLowerCase() !== currentGuess.toLowerCase() && 
+            !guesses.includes(null) && solution.toLowerCase() !== guesses[5].toLowerCase() && 
             <div className='flex flex-col gap-4'>
               <p>
                 <span className='font-semibold'>😔 Good try! </span> 
