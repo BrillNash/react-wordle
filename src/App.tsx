@@ -93,7 +93,7 @@ function App() {
   return (
     <>
       <main className='flex flex-col justify-between p-16 h-screen bg-linear-to-r from-blue-300 to-red-300'>
-        <section className='flex flex-col gap-4 items-center'>
+        <section className='flex flex-col gap-4 items-center scale-80 sm:scale-100'>
           <h1 className='font-bold text-3xl tracking-widest'>WORDLE</h1>
           <div className='flex flex-col gap-2'>
             {
