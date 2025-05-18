@@ -92,8 +92,8 @@ function App() {
 
   return (
     <>
-      <main className='flex flex-col justify-between p-16 h-screen bg-linear-to-r from-blue-300 to-red-300'>
-        <section className='flex flex-col gap-4 items-center scale-80 sm:scale-100'>
+      <main className='relative flex flex-col justify-between p-2 sm:p-16 h-screen bg-linear-to-r from-blue-300 to-red-300'>
+        <section className='flex flex-col flex-1 gap-4 items-center scale-80 sm:scale-100'>
           <h1 className='font-bold text-3xl tracking-widest'>WORDLE</h1>
           <div className='flex flex-col gap-2'>
             {
@@ -144,7 +144,7 @@ function App() {
             </>
           }
         </section>
-        <section className='scale-65 sm:scale-100'>
+        <section className='absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-70 sm:scale-100'>
           { <Keys keyGroup={keys} letterStatusMap={letterStatusMap} onKeyPress={handleKeyPress}/> }
         </section>
       </main>
