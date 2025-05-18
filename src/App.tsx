@@ -92,10 +92,10 @@ function App() {
 
   return (
     <>
-      <main className='relative flex flex-col justify-between p-2 sm:p-16 h-screen bg-linear-to-r from-blue-300 to-red-300'>
-        <section className='flex flex-col flex-1 gap-4 items-center scale-80 sm:scale-100'>
+      <main className='flex flex-col justify-between items-center gap-4 sm:gap-12 p-4 sm:p-16 min-h-screen bg-linear-to-r from-blue-300 to-red-300'>
+        <section className='flex flex-col self-stretch gap-8 items-center'>
           <h1 className='font-bold text-3xl tracking-widest'>WORDLE</h1>
-          <div className='flex flex-col gap-2'>
+          <div className='w-full flex flex-col gap-2'>
             {
               guesses.map((guess, i) => {
                 const isCurrentGuess = i === guesses.findIndex(val => val== null)
@@ -120,7 +120,7 @@ function App() {
                 Don't give up — try again and sharpen your word skills!
               </p>
               <button 
-                className='bg-blue-200 rounded-sm hover:bg-blue-300 hover:cursor-pointer transition-colors py-2 px-4 w-fit self-center' 
+                className='bg-blue-200 rounded-sm hover:bg-blue-300 hover:cursor-pointer transition-colors py-2 px-4 self-center' 
                 onClick={reset}
               >
                 Play Again
@@ -144,7 +144,7 @@ function App() {
             </>
           }
         </section>
-        <section className='absolute bottom-0 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-70 sm:scale-100'>
+        <section>
           { <Keys keyGroup={keys} letterStatusMap={letterStatusMap} onKeyPress={handleKeyPress}/> }
         </section>
       </main>

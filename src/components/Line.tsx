@@ -33,7 +33,7 @@ export const Line = ({ guess, isFinal, solution }: LineProps) => {
             'items-center', 
             'border', 
             'border-black', 
-            'min-h-12', 
+            'w-full', 
             'aspect-square',
             'uppercase',
             'transition-all',
@@ -48,7 +48,7 @@ export const Line = ({ guess, isFinal, solution }: LineProps) => {
   }
 
   return (
-    <div className="flex gap-2">
+    <div className="grid grid-cols-5 gap-2 w-full max-w-[390px] mx-auto">
       {tiles}
     </div>
   )
