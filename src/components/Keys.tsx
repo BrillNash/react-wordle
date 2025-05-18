@@ -78,8 +78,8 @@ export const Keys = ({ keyGroup, letterStatusMap, onKeyPress }: KeysProps) => {
                 'duration-300',
                 'cursor-pointer',
                 'hover:bg-blue-300',
-                isPressed ? 'bg-blue-300 scale-95' : '',
-                getColorClass(key.toLowerCase())
+                getColorClass(key.toLowerCase()),
+                isPressed ? 'bg-blue-300 scale-80' : ''
               ].join(' ')}
             >
               {key}
