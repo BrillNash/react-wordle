@@ -90,7 +90,7 @@ export const Keys = ({ keyGroup, letterStatusMap, onKeyPress }: KeysProps) => {
                 'self-stretch',
                 'justify-center',
                 'items-center',
-                'min-h-10 sm:min-h-13',
+                'min-h-12 sm:min-h-14',
                 'px-2.5 sm:px-4',
                 'text-xs sm:text-lg',
                 'uppercase',
