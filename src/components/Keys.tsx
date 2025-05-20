@@ -28,13 +28,15 @@ export const Keys = ({ keyGroup, letterStatusMap, onKeyPress }: KeysProps) => {
   };
 
   const handleKeyPress = useCallback((key: string, target?: HTMLDivElement | null) => {
-    onKeyPress(key);
-    setPressedKey(key);
+    const formattedKey = key === '⌫' ? 'Backspace' : key;
+    onKeyPress(formattedKey);
+    setPressedKey(formattedKey);
+    console.log(formattedKey)
 
     if (target) {
       const rect = target.getBoundingClientRect();
       setKeyPreview({
-        key,
+        key: formattedKey,
         x: rect.left + rect.width / 2,
         y: rect.top,
         width: rect.width,
@@ -60,6 +62,8 @@ export const Keys = ({ keyGroup, letterStatusMap, onKeyPress }: KeysProps) => {
         // Keep as is
       } else if (/^[a-zA-Z]$/.test(key)) {
         key = key.toLowerCase();
+      } else if (key === '⌫') {
+        key = 'Backspace';
       } else {
         return; // Ignore other keys
       }

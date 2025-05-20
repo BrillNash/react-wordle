@@ -66,6 +66,8 @@ function App() {
         return
       }
 
+      console.log(event.key)
+
       if (event.key === 'Enter') {
         if(currentGuess.length != 5) return
 
@@ -78,7 +80,7 @@ function App() {
         if (isCorrect) {
           setIsGameOver(true)
         }
-      } else if (event.key === 'Backspace') {
+      } else if (event.key === '⌫' || event.key === 'Backspace') {
         setCurrentGuess(currentGuess.slice(0, -1))
         return
       }
