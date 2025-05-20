@@ -9,6 +9,6 @@ export const keys = [
   },
   {
     row: 3,
-    keys: ['Enter', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'Backspace']
+    keys: ['Enter', 'z', 'x', 'c', 'v', 'b', 'n', 'm', '⌫']
   }
 ];

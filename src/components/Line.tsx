@@ -48,7 +48,7 @@ export const Line = ({ guess, isFinal, solution }: LineProps) => {
   }
 
   return (
-    <div className="grid grid-cols-5 gap-2 w-full max-w-[390px] mx-auto">
+    <div className="grid grid-cols-5 gap-2 w-full max-w-[320px] mx-auto">
       {tiles}
     </div>
   )
