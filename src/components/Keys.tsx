@@ -31,12 +31,11 @@ export const Keys = ({ keyGroup, letterStatusMap, onKeyPress }: KeysProps) => {
     const formattedKey = key === '⌫' ? 'Backspace' : key;
     onKeyPress(formattedKey);
     setPressedKey(formattedKey);
-    console.log(formattedKey)
 
     if (target) {
       const rect = target.getBoundingClientRect();
       setKeyPreview({
-        key: formattedKey,
+        key: key,
         x: rect.left + rect.width / 2,
         y: rect.top,
         width: rect.width,
