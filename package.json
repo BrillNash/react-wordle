@@ -11,9 +11,16 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.6",
+    "@tsparticles/preset-confetti": "^3.2.0",
+    "@tsparticles/react": "^3.0.0",
+    "@tsparticles/react-workspace": "github:tsparticles/react",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "tailwindcss": "^4.1.6"
+    "react-tsparticles": "^2.12.2",
+    "tailwindcss": "^4.1.6",
+    "tsparticles": "^3.8.1",
+    "tsparticles-engine": "^2.12.0",
+    "tsparticles-preset-confetti": "^2.12.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",

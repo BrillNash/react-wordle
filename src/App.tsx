@@ -3,6 +3,7 @@ import { words } from './constants/words'
 import { Line } from './components/Line'
 import { keys } from './constants/keys'
 import { Keys } from './components/Keys'
+import { Confetti } from './components/Confetti'
 import { getLetterStatusMap } from './composable/getLetterStatusMap'
 
 function App() {
@@ -11,6 +12,8 @@ function App() {
   const [currentGuess, setCurrentGuess] = useState('')
   const [isGameOver, setIsGameOver] = useState(false)
   const letterStatusMap = getLetterStatusMap(guesses.filter(Boolean), solution)
+  const [showConfetti, setShowConfetti] = useState(false);
+
 
   const reset = () => {
     setIsGameOver(false)
@@ -35,6 +38,11 @@ function App() {
       const isCorrect = solution === currentGuess
       if (isCorrect) {
         setIsGameOver(true)
+        setShowConfetti(true)
+
+        setTimeout(() => {
+          setShowConfetti(false);
+        }, 5000);
       }
     } else if (key === 'Backspace') {
       setCurrentGuess(currentGuess.slice(0, -1))
@@ -93,6 +101,7 @@ function App() {
   return (
     <>
       <main className='flex flex-col justify-between items-center gap-4 sm:gap-12 p-4 sm:p-16 min-h-screen bg-linear-to-r from-blue-300 to-red-300'>
+        {showConfetti && <Confetti />}
         <section className='flex flex-col self-stretch gap-8 items-center'>
           <h1 className='font-bold text-3xl tracking-widest'>WORDLE</h1>
           <div className='w-full flex flex-col gap-2'>
@@ -112,8 +121,8 @@ function App() {
           </div>
           {
             !guesses.includes(null) && solution.toLowerCase() !== guesses[5].toLowerCase() && 
-            <div className='flex flex-col gap-4'>
-              <p>
+            <div className='flex flex-col gap-4 max-w-xl'>
+              <p className='text-center'>
                 <span className='font-semibold'>😔 Good try! </span> 
                 The correct word was 
                 <span className='font-semibold'> {solution.toUpperCase()}</span>. 
@@ -130,21 +139,21 @@ function App() {
           }
           {
             isGameOver && 
-            <>
-              <p>
+            <div className='flex flex-col gap-4 max-w-xl'>
+              <p className='text-center'>
                 🎉 Congratulations! You guessed the word correctly — 
                 <span className='font-semibold'>{solution.toUpperCase()}</span>! 🏆
               </p>
               <button 
-                className='bg-blue-200 rounded-sm hover:bg-blue-300 hover:cursor-pointer transition-colors py-2 px-4' 
+                className='bg-blue-200 rounded-sm hover:bg-blue-300 hover:cursor-pointer transition-colors py-2 px-4 self-center' 
                 onClick={reset}
               >
                 Play Again
               </button>
-            </>
+            </div>
           }
         </section>
-        <section>
+        <section className='self-stretch'>
           { <Keys keyGroup={keys} letterStatusMap={letterStatusMap} onKeyPress={handleKeyPress}/> }
         </section>
       </main>
