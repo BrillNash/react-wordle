@@ -35,6 +35,8 @@ export const Line = ({ guess, isFinal, solution }: LineProps) => {
             'border-black', 
             'w-full', 
             'aspect-square',
+            'font-bold',
+            'text-2xl',
             'uppercase',
             'transition-all',
             'duration-300',

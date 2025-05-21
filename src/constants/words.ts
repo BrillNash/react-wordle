@@ -17,3 +17,13 @@ export const words = [
   "Moral", "Motor", "Mount", "Mouse", "Music", "Naked", "Never", "Night", "Noise", "North",
   "Novel", "Nurse", "Ocean", "Offer", "Order", "Other", "Owner", "Panel", "Paper", "Party"
 ];
+
+export const sampleWords = [
+  "grape", "peach", "melon"
+]
+
+export const sampleInstructions = [
+  '🟩 A green tile means the letter is in the correct spot.',
+  '🟨 Yellow indicates the letter is in the word, but in the wrong position.',
+  '⬜ Gray means the letter isn’t in the word at all.'
+]

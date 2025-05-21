@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { words } from './constants/words'
 import { Line } from './components/Line'
 import { keys } from './constants/keys'
 import { Keys } from './components/Keys'
 import { Confetti } from './components/Confetti'
 import { getLetterStatusMap } from './composable/getLetterStatusMap'
+import Modal from './components/Modal'
 
 function App() {
   const [solution, setSolution] = useState(() => words[Math.floor(Math.random() * words.length)].toLowerCase())
@@ -13,6 +14,8 @@ function App() {
   const [isGameOver, setIsGameOver] = useState(false)
   const letterStatusMap = getLetterStatusMap(guesses.filter(Boolean), solution)
   const [showConfetti, setShowConfetti] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  const hasOpened = useRef(false)
 
 
   const reset = () => {
@@ -20,6 +23,10 @@ function App() {
     setCurrentGuess('')
     setGuesses(Array(6).fill(null))
     setSolution(words[Math.floor(Math.random() * words.length)].toLowerCase())
+  }
+
+  const onCloseModal = () => {
+    setIsModalOpen(false)
   }
 
   const handleKeyPress = (key: string) => {
@@ -61,12 +68,14 @@ function App() {
   }
 
   useEffect(() => {
+    if (!hasOpened.current) {
+      setIsModalOpen(true);
+      hasOpened.current = true;
+    }
     const handleType = (event: KeyboardEvent) => {
       if (isGameOver) {
         return
       }
-
-      console.log(event.key)
 
       if (event.key === 'Enter') {
         if(currentGuess.length != 5) return
@@ -102,6 +111,7 @@ function App() {
 
   return (
     <>
+      {isModalOpen && <Modal isOpen={isModalOpen} onClose={onCloseModal}/>}
       <main className='flex flex-col justify-between items-center gap-4 sm:gap-12 p-4 sm:p-16 min-h-screen bg-linear-to-r from-blue-300 to-red-300'>
         {showConfetti && <Confetti />}
         <section className='flex flex-col self-stretch gap-8 items-center'>
