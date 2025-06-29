@@ -15,8 +15,19 @@ export const words = [
   "Learn", "Leave", "Legal", "Level", "Light", "Limit", "Local", "Logic", "Loose", "Lucky",
   "Lunch", "Magic", "Major", "March", "Match", "Metal", "Might", "Minor", "Money", "Month",
   "Moral", "Motor", "Mount", "Mouse", "Music", "Naked", "Never", "Night", "Noise", "North",
-  "Novel", "Nurse", "Ocean", "Offer", "Order", "Other", "Owner", "Panel", "Paper", "Party"
+  "Novel", "Nurse", "Ocean", "Offer", "Order", "Other", "Owner", "Panel", "Paper", "Party",
+  "Patch", "Peace", "Phone", "Plant", "Plate", "Point", "Power", "Price", "Pride", "Prime",
+  "Print", "Prize", "Proof", "Proud", "Queen", "Quick", "Quiet", "Quite", "Radio", "Raise",
+  "Reach", "React", "Ready", "Realm", "Refer", "Relax", "Reply", "Right", "River", "Rocky",
+  "Rough", "Round", "Royal", "Ruler", "Rural", "Scale", "Scene", "Scope", "Score", "Screw",
+  "Sense", "Serve", "Shame", "Shape", "Sharp", "Sheet", "Shelf", "Shell", "Shift", "Shine",
+  "Shirt", "Shock", "Short", "Sight", "Skill", "Sleep", "Slice", "Slope", "Smart", "Smile",
+  "Smoke", "Solid", "Solve", "Sound", "South", "Space", "Spare", "Speak", "Speed", "Spend",
+  "Spice", "Spite", "Split", "Sport", "Staff", "Stage", "Stand", "Start", "State", "Steam",
+  "Steel", "Stick", "Stock", "Stone", "Store", "Storm", "Story", "Stuck", "Study", "Style",
+  "Sugar", "Suite", "Super", "Swear", "Sweet", "Table", "Taste", "Teach", "Thank", "Theme"
 ];
+
 
 export const sampleWords = [
   "grape", "peach", "melon"
